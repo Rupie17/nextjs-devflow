@@ -71,3 +71,63 @@ export const BADGE_CRITERIA = {
     GOLD: 100000,
   },
 }
+
+export const questionList = [
+  {
+    id: 1,
+    question: 'How to use arrow functions?',
+    imgURL: '/assets/icons/chevron-right.svg',
+    url: '/',
+  },
+  {
+    id: 2,
+    question: 'low digit addition generator',
+    imgURL: '/assets/icons/chevron-right.svg',
+    url: '/',
+  },
+  {
+    id: 3,
+    question: 'palindrome vanilla js function',
+    imgURL: '/assets/icons/chevron-right.svg',
+    url: '/',
+  },
+  {
+    id: 4,
+    question: 'how to nest objects in an array and access them?',
+    imgURL: '/assets/icons/chevron-right.svg',
+    url: '/',
+  },
+]
+
+export const badgeTags = [
+  {
+    _id: 1,
+    tag: 'JavaScript',
+    count: 5000,
+    url: '/',
+  },
+  {
+    _id: 2,
+    tag: 'Next.js',
+    count: 18543,
+    url: '/',
+  },
+  {
+    _id: 3,
+    tag: 'Node.js',
+    count: 10000,
+    url: '/',
+  },
+  {
+    _id: 4,
+    tag: 'MongoDB',
+    count: 9429,
+    url: '/',
+  },
+  {
+    _id: 5,
+    tag: 'React',
+    count: 2297,
+    url: '/',
+  },
+]
