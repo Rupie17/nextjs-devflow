@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "A community driver platform for asking and answering programming questions",
   icons: {
-    icon: "../public/assets/images/site-logo.svg",
+    icon: "/assets/images/site-logo.svg",
   },
 };
 
