@@ -19,6 +19,7 @@ import { Button } from '../ui/button'
 import { QuestionsSchema } from '@/lib/validations'
 import { Badge } from '../ui/badge'
 import Image from 'next/image'
+import { createQuestion } from '@/lib/actions/question.action'
 
 // make form reusable, either create, edit, delete
 const type: any = 'create'
@@ -38,12 +39,13 @@ const Question = () => {
   })
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof QuestionsSchema>) {
+  async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
     setIsSubmitting(true)
     try {
       // make an async call to our APIl to create a question.
       // contain all form date
       // navigate to home page to see questions
+      await createQuestion({})
     } catch (error) {
     } finally {
       setIsSubmitting(false)
@@ -132,6 +134,8 @@ const Question = () => {
                     // @ts-ignore
                     editorRef.current = editor
                   }}
+                  onBlur={field.onBlur}
+                  onEditorChange={(content) => field.onChange(content)}
                   initialValue='<p>This is the initial content of the editor.</p>'
                   init={{
                     height: 350,
