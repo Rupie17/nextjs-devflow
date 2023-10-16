@@ -4,11 +4,13 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { HomePageFilters } from '@/constants/filters'
 import HomeFilters from '@/components/home/HomeFilters'
-import { questions } from '@/constants/constants'
 import NoResult from '@/components/shared/NoResult'
 import QuestionCard from '@/components/cards/QuestionCard'
+import { getQuestions } from '@/lib/actions/question.action'
 
-export default function Home() {
+export default async function Home() {
+  const result = await getQuestions({})
+
   return (
     <>
       <div className='flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center'>
@@ -40,8 +42,8 @@ export default function Home() {
 
       <div className='mt-10 flex w-full flex-col gap-6'>
         {/* Looping through the questions */}
-        {questions.length > 0 ? (
-          questions.map((question) => (
+        {result.questions.length > 0 ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
